@@ -75,15 +75,7 @@ namespace Hackathon.API
                 var importer = app.ApplicationServices.GetRequiredService<ICsvDataImporter>();
                 importer.Import().Wait();
 
-                if (env.IsDevelopment())
-                {
-                    app.UseDeveloperExceptionPage();
-                }
-                else
-                {
-                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                    app.UseHsts();
-                }
+                app.UseDeveloperExceptionPage();
 
                 app.UseCors(options =>
                 {
