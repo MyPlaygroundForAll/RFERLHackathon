@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hackathon.api:
+    image: registry.heroku.com/team4-rferl-hackathon/web
+    build:
+      context: .
+      dockerfile: src/Hackathon.API/Dockerfile
