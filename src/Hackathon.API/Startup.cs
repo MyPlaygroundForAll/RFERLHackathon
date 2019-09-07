@@ -1,7 +1,14 @@
 ﻿using System;
+using System.Reflection;
 using Hackathon.API.Filters;
+using Hackathon.Application.Interfaces;
+using Hackathon.Application.Services;
+using Hackathon.Domain.Model;
+using Hackathon.Persistence;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -39,6 +46,12 @@ namespace Hackathon.API
                 services.AddWebApi(c => c.UseExceptionHandler<HackathonExceptionHandler>())
                     .AddSwaggerInfrastructure();
 
+                services.AddSingleton<ICsvDataImporter, CsvDataImporter>();
+                services.AddDbContext<HackathonDbContext>(options => options.UseInMemoryDatabase(databaseName: "HackathonDB"), ServiceLifetime.Singleton);
+                services.AddSingleton<IDataRepository, DataRepository>();
+                services.AddSingleton<IDataService, DataService>();
+                services.AddMediatR(Assembly.GetExecutingAssembly());
+
                 services.AddCors();
 
                 _logger.LogInformation("Dependencies are injected for starting application");
@@ -59,6 +72,9 @@ namespace Hackathon.API
 
             try
             {
+                var importer = app.ApplicationServices.GetRequiredService<ICsvDataImporter>();
+                importer.Import().Wait();
+
                 if (env.IsDevelopment())
                 {
                     app.UseDeveloperExceptionPage();

@@ -7,9 +7,11 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -22,9 +24,11 @@
     <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.4" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hackathon.Persistence\Hackathon.Persistence.csproj" />
     <ProjectReference Include="..\Hackathon\Hackathon.csproj" />
     <ProjectReference Include="..\RFERL.Modules.Framework.Common\RFERL.Modules.Framework.Common.csproj" />
     <ProjectReference Include="..\RFERL.Modules.Framework.WebAPI.Abstractions\RFERL.Modules.Framework.WebAPI.Abstractions.csproj" />

@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="12.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RFERL.Modules.Framework.Common\RFERL.Modules.Framework.Common.csproj" />
+    <ProjectReference Include="..\RFERL.Modules.Framework.Data.Abstractions\RFERL.Modules.Framework.Data.Abstractions.csproj" />
+  </ItemGroup>
 
 </Project>

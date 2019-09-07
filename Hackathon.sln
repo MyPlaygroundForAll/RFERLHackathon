@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29230.47
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hackathon", "src\Hackathon\Hackathon.csproj", "{E0119F56-8F9C-422E-8BAD-6DFFB375812F}"
 EndProject
@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RFERL.Modules.Framework.Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RFERL.Modules.Framework.WebAPI.Abstractions", "src\RFERL.Modules.Framework.WebAPI.Abstractions\RFERL.Modules.Framework.WebAPI.Abstractions.csproj", "{C5A1E1EE-FB26-49BF-84E9-30F2E2E4FAC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hackathon.SharedContracts", "src\Hackathon.SharedContracts\Hackathon.SharedContracts.csproj", "{4EBDFC1E-46A9-48D0-BED0-2356FF305628}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DD444C25-5889-487A-9CD8-412EB9984C8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RFERL.Modules.Framework.Data.Abstractions", "src\RFERL.Modules.Framework.Data.Abstractions\RFERL.Modules.Framework.Data.Abstractions.csproj", "{A2E4C143-1679-4314-A3D5-69EDAF26CF18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RFERL.Modules.Framework.Data.EntityFramework.Abstractions", "src\RFERL.Modules.Framework.Data.EntityFramework.Abstractions\RFERL.Modules.Framework.Data.EntityFramework.Abstractions.csproj", "{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Persistence", "src\Hackathon.Persistence\Hackathon.Persistence.csproj", "{767B12F7-A252-4179-9FDE-9F00061B6499}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +43,22 @@ Global
 		{C5A1E1EE-FB26-49BF-84E9-30F2E2E4FAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A1E1EE-FB26-49BF-84E9-30F2E2E4FAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A1E1EE-FB26-49BF-84E9-30F2E2E4FAC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EBDFC1E-46A9-48D0-BED0-2356FF305628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EBDFC1E-46A9-48D0-BED0-2356FF305628}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EBDFC1E-46A9-48D0-BED0-2356FF305628}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EBDFC1E-46A9-48D0-BED0-2356FF305628}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD444C25-5889-487A-9CD8-412EB9984C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD444C25-5889-487A-9CD8-412EB9984C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD444C25-5889-487A-9CD8-412EB9984C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD444C25-5889-487A-9CD8-412EB9984C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E4C143-1679-4314-A3D5-69EDAF26CF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E4C143-1679-4314-A3D5-69EDAF26CF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E4C143-1679-4314-A3D5-69EDAF26CF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E4C143-1679-4314-A3D5-69EDAF26CF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767B12F7-A252-4179-9FDE-9F00061B6499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767B12F7-A252-4179-9FDE-9F00061B6499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767B12F7-A252-4179-9FDE-9F00061B6499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767B12F7-A252-4179-9FDE-9F00061B6499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +66,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CC9EB08D-EF58-4C23-81A3-7D0B2BE02A45} = {6872514A-54A6-4402-BEEB-E5EA1126AB08}
 		{C5A1E1EE-FB26-49BF-84E9-30F2E2E4FAC7} = {6872514A-54A6-4402-BEEB-E5EA1126AB08}
+		{A2E4C143-1679-4314-A3D5-69EDAF26CF18} = {6872514A-54A6-4402-BEEB-E5EA1126AB08}
+		{05BDDEBA-3ADC-4FD0-8B00-7B570AEF5539} = {6872514A-54A6-4402-BEEB-E5EA1126AB08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1198F294-8FC2-4737-A754-762E997716CC}
