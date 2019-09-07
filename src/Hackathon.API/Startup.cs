@@ -85,6 +85,7 @@ namespace Hackathon.API
                     options.AllowCredentials();
                 });
 
+                app.UseStaticFiles();
                 app.UseWebApi();
 
                 _logger.LogInformation("Application configuration is completed.");

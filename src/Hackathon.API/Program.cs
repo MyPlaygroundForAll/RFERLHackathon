@@ -24,6 +24,7 @@ namespace Hackathon.API
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .CaptureStartupErrors(true)
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseSerilog((provider, hostContext, logConfiguration) =>
                 {
                     logConfiguration
