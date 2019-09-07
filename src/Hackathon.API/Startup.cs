@@ -72,9 +72,6 @@ namespace Hackathon.API
 
             try
             {
-                var importer = app.ApplicationServices.GetRequiredService<ICsvDataImporter>();
-                importer.Import().Wait();
-
                 app.UseDeveloperExceptionPage();
 
                 app.UseCors(options =>
